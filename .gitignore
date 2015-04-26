@@ -1,0 +1,3 @@
+.vagrant
+modules/
+vagrant-provision-reboot-plugin.rb
