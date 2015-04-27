@@ -50,8 +50,6 @@ class { 'wonder':
 	groupname => 'wouser',
 }
 
-wonder::application { 'BKWorldServer': }
-wonder::application { 'BKLoginServer': }
 wonder::application { 'Movies': }
 
 file { '/home/wouser/.ssh':
