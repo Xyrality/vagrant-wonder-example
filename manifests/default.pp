@@ -31,18 +31,13 @@ class { 'postgresql::server':
 	listen_addresses           => '*',
 }
 
-postgresql::server::role { 'xyrality-dev':
-  password_hash => postgresql_password('xyrality-dev', 'xyrality'),
+postgresql::server::role { 'testdev':
+  password_hash => postgresql_password('testdev', 'password'),
 }
 
-postgresql::server::database { 'bk_stage_world':
-	owner => 'xyrality-dev',
-	require => Postgresql::Server::Role['xyrality-dev']
-}
-
-postgresql::server::database { 'bk_stage_login':
-	owner => 'xyrality-dev',
-	require => Postgresql::Server::Role['xyrality-dev']
+postgresql::server::database { 'movies':
+	owner => 'testdev',
+	require => Postgresql::Server::Role['testdev']
 }
 
 class { 'wonder':
